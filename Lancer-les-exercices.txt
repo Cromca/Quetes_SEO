@@ -14,7 +14,7 @@ Apache doit charger mod_rewrite et autoriser les fichiers .htaccess (AllowOverri
 Ouvrir seulement les fichiers HTML permet de lire les pages, mais ne lance pas les redirections du serveur.
 GitHub stocke ici le code : GitHub Pages n'exécute pas les règles Apache.
 
-Vérification réalisée avec Apache 2.4.66 : 33 contrôles réussis, dont les statuts 301, les paramètres UTM conservés, les balises canonical, les titres et les pages absentes en 404.
+Vérification réalisée avec Apache 2.4.66 : 49 contrôles réussis, dont les deux produits de la quête 3, les statuts 301, les paramètres UTM conservés, les balises canonical, les titres et les pages absentes en 404.
 La navigation entre l'accueil et la fiche produit de la quête 3 a aussi été vérifiée dans Chrome.
 
 Pour relancer les contrôles sur vos instances Apache, utiliser Python 3 :

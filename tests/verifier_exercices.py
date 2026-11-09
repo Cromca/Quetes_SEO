@@ -74,20 +74,31 @@ def main():
         count += 1
         print("OK :", message)
 
-    for route in ["/", "/produits/velo-electrique-pliable"]:
+    titles = set()
+    descriptions = set()
+    for route in ["/", "/produits/velo-electrique-pliable", "/produits/velo-electrique-ville"]:
         status, _, body = request(args.quete3, route)
         check(status == 200, "Quête 3 : page accessible " + route)
         page = Page(body)
         check("électrique" in page.title_text.lower(), "Titre descriptif " + route)
         check(len(page.descriptions) == 1 and bool(page.descriptions[0]), "Description présente " + route)
+        check(page.title_text not in titles, "Titre unique " + route)
+        check(page.descriptions[0] not in descriptions, "Description unique " + route)
+        titles.add(page.title_text)
+        descriptions.add(page.descriptions[0])
         check(page.headings[0] == "h1" and page.headings.count("h1") == 1 and "h2" in page.headings, "Hiérarchie des titres " + route)
         check("cliquez ici" not in body.lower(), "Ancre explicite " + route)
         if route == "/":
             check("/produits/velo-electrique-pliable" in page.links, "Lien vers la fiche produit")
+            check("/produits/velo-electrique-ville" in page.links, "Lien vers la seconde fiche produit")
 
     for old in ["/produit?id=42", "/produite?id=42", "/produit.html", "/produits/velo-electrique-pliable/"]:
         status, location, _ = request(args.quete3, old)
         check(status == 301 and urlsplit(location).path == "/produits/velo-electrique-pliable" and not urlsplit(location).query, "Ancienne URL redirigée : " + old)
+
+    for old in ["/produit?id=43", "/produite?id=43", "/produit-ville.html", "/produits/velo-electrique-ville/"]:
+        status, location, _ = request(args.quete3, old)
+        check(status == 301 and urlsplit(location).path == "/produits/velo-electrique-ville" and not urlsplit(location).query, "Seconde ancienne URL redirigée : " + old)
 
     canonical = "https://monsite.fr/produit/42"
     for origin in [args.quete4_http, args.quete4_https]:
