@@ -1,3 +1,5 @@
-1.Choisir une URL canonique unique : https://monsite.fr/produit/42
-2.Mettre en place des redirections 301 de HTTP vers HTTPS et de /produit/42/ vers /produit/42.
-3.Ajouter dans le <head> de la fiche produit, y compris sur la version avec ?utm_source=facebook, la balise <link rel="canonical" href="https://monsite.fr/produit/42" /> pour indiquer la version de référence sans paramètre.
+1.Choisir une seule adresse de référence pour le produit : https://monsite.fr/produit/42. C'est ce qu'on appelle l'URL canonique.
+
+2.Rediriger automatiquement les visiteurs vers cette adresse avec des redirections permanentes 301 : passer de HTTP à HTTPS et enlever le / à la fin de /produit/42/.
+
+3.Ajouter une balise canonical dans l'en-tête HTML de la page pour indiquer à Google cette adresse de référence. La mettre aussi quand l'adresse contient ?utm_source=facebook : ce paramètre sert à suivre les visites venant d'un lien partagé sur Facebook, mais le produit reste le même. La balise indique donc l'adresse sans ce paramètre et ne redirige pas le visiteur.
