@@ -1,5 +1,7 @@
-1.Tittle trop générique : <Acceuil> ne décrit pas le sujet de la page et ne contien aucun mot-clé pertinent
-2.Meta description absente : il manque une description présentant le contenu de la page 
-3.Hiérarchie des titres incohérente : le <h2> aparrait avant le <h1>.Le titre <Nos produits> manque aussi de précision.
-4.URLS peu descriptives: /produite?id=42 devrait etre remplacée par une URL lisible, comme /produits/velo-electrique-pliable
-5.Ancres de liens vagues : <cliquez ici> devrait etre remplacé par le nom du produit pour décrire la page ciblé
+Les corrections sont appliquées dans quete3/index.html et quete3/produit.html.
+
+1.Le titre décrit les vélos électriques pliables.
+2.Une meta description présente le contenu de chaque page.
+3.Le h1 apparaît avant les h2 et les titres décrivent les sections.
+4.Le produit est accessible à /produits/velo-electrique-pliable. Le fichier quete3/.htaccess redirige l'ancienne adresse /produit?id=42 vers cette URL.
+5.Le lien indique « Découvrir le vélo électrique pliable » au lieu de « cliquez ici ».

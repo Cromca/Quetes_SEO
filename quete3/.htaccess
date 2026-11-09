@@ -1,0 +1,13 @@
+DirectoryIndex index.html
+RewriteEngine On
+
+# L'ancienne URL du produit redirige vers une adresse descriptive.
+RewriteCond %{QUERY_STRING} ^id=42$
+RewriteRule ^produite?$ /produits/velo-electrique-pliable [R=301,L,QSD]
+
+# Ne pas exposer une seconde adresse pour la même fiche produit.
+RewriteCond %{THE_REQUEST} \s/+produit\.html(?:[?\s]) [NC]
+RewriteRule ^produit\.html$ /produits/velo-electrique-pliable [R=301,L]
+
+RewriteRule ^produits/velo-electrique-pliable/$ /produits/velo-electrique-pliable [R=301,L]
+RewriteRule ^produits/velo-electrique-pliable$ produit.html [END]

@@ -1,0 +1,15 @@
+RewriteEngine On
+
+# Toutes les variantes du produit utilisent HTTPS, le même domaine
+# et la même adresse sans slash final. Le paramètre UTM est conservé.
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} !^monsite\.fr$ [NC,OR]
+RewriteCond %{REQUEST_URI} ^/produit/42/$
+RewriteRule ^produit/42/?$ https://monsite.fr/produit/42 [R=301,L]
+
+# Si le fichier HTML est demandé directement, utiliser l'adresse canonique.
+RewriteCond %{THE_REQUEST} \s/+produit\.html(?:[?\s]) [NC]
+RewriteRule ^produit\.html$ https://monsite.fr/produit/42 [R=301,L]
+
+# Même fichier HTML pour l'URL normale et celle avec ?utm_source=facebook.
+RewriteRule ^produit/42$ produit.html [END]

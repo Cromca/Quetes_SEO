@@ -1,0 +1,23 @@
+Les dossiers quete3 et quete4 contiennent deux exercices indépendants.
+Ils reprennent l'exemple de boutique de vélos des réponses précédentes ; aucun site source n'était présent dans ce dépôt.
+
+Quête 3 : utiliser quete3 comme racine d'un site Apache 2.4.
+Ouvrir / pour la page corrigée, puis suivre le lien vers /produits/velo-electrique-pliable.
+L'ancienne adresse /produit?id=42 redirige vers cette nouvelle adresse.
+
+Quête 4 : utiliser quete4 comme racine d'un site Apache 2.4, avec HTTPS.
+Le domaine monsite.fr est celui de l'exercice, pas un domaine déployé par ce rendu.
+Pour un vrai site, remplacer monsite.fr dans .htaccess et dans produit.html par son domaine, puis configurer son certificat TLS.
+La page est disponible à /produit/42, avec ou sans ?utm_source=facebook.
+
+Apache doit charger mod_rewrite et autoriser les fichiers .htaccess (AllowOverride FileInfo Indexes).
+Ouvrir seulement les fichiers HTML permet de lire les pages, mais ne lance pas les redirections du serveur.
+GitHub stocke ici le code : GitHub Pages n'exécute pas les règles Apache.
+
+Vérification réalisée avec Apache 2.4.66 : 33 contrôles réussis, dont les statuts 301, les paramètres UTM conservés, les balises canonical, les titres et les pages absentes en 404.
+La navigation entre l'accueil et la fiche produit de la quête 3 a aussi été vérifiée dans Chrome.
+
+Pour relancer les contrôles sur vos instances Apache, utiliser Python 3 :
+python tests/verifier_exercices.py --quete3 http://127.0.0.1:5186 --quete4-http http://127.0.0.1:5187 --quete4-https https://127.0.0.1:5443 --ca chemin/vers/certificat-local.crt
+Adapter les trois adresses aux ports configurés dans Apache. Les requêtes utilisent le nom d'hôte monsite.fr de l'exercice.
+L'option --ca sert uniquement à faire confiance au certificat local du test ; elle est inutile avec un certificat déjà reconnu.
