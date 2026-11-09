@@ -1,0 +1,3 @@
+1.Mettre en place une génération statique (SSG) ou un pré-rendu de chaque page pour que le nom du restaurant et le contenu des plats soient présents dans le HTML initial, sans dépendre de l'exécution du JavaScript. Le SSG est adapté à un site vitrine dont le menu change peu. Vérifier aussi dans Search Console qu'aucune balise noindex ou règle robots.txt ne bloque l'indexation ou l'exploration.
+
+2.Ajouter un titre et une meta description uniques pour chaque page, par exemple « Pizza Margherita | Nom du restaurant », ainsi qu'une URL canonique correcte. Ces balises doivent être présentes dans le HTML généré. Utiliser des URL propres comme /menu/pizza-margherita, sans #, et des liens entre la page du menu et les pages des plats pour faciliter leur découverte.
