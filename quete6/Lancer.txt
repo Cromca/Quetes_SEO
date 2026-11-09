@@ -1,0 +1,17 @@
+Dans ce dossier, avec Node.js 22.12 ou plus :
+npm ci
+npm run build
+npm test
+npm start
+
+Ouvrir http://localhost:5176.
+Les pages HTML sont générées dans dist au moment du build. Le serveur sert ces fichiers ; il n'exécute pas React à chaque requête.
+Les titres, descriptions et URL canoniques sont déjà présents dans le HTML puis sont mis à jour pendant la navigation React.
+Un lien vers un plat absent renvoie le statut HTTP 404.
+Le serveur fourni sert de démonstration locale.
+
+npm run dev sert uniquement au développement. Pour vérifier le pré-rendu, utiliser npm run build puis npm start.
+
+Avant une publication, copier .env.example en .env.local, définir VITE_SITE_ORIGIN avec le vrai domaine puis refaire le build.
+Le domaine par défaut est celui de la démonstration locale, pas une adresse publique.
+Sur un autre hébergement, conserver la résolution des URL vers leurs fichiers index.html et le vrai statut 404.

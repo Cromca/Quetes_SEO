@@ -1,0 +1,10 @@
+* { box-sizing: border-box; }
+body { margin: 0 auto; padding: 24px; max-width: 900px; color: #202522; background: #fffdf8; font-family: system-ui, sans-serif; line-height: 1.6; }
+header { border-bottom: 1px solid #d6dacf; padding-bottom: 16px; }
+main { padding: 20px 0; min-height: 65vh; }
+h1, h2, h3 { line-height: 1.25; }
+a { color: #175534; text-underline-offset: 3px; }
+a:focus-visible { outline: 3px solid #175534; outline-offset: 4px; }
+.menu { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 24px; }
+.menu li { padding: 20px; border: 1px solid #d6dacf; border-radius: 8px; background: white; }
+footer { border-top: 1px solid #d6dacf; padding-top: 16px; }

@@ -1,2 +1,3 @@
-1.Générer les pages en HTML avec du SSG, adapté à un menu qui change peu, pour que les robots puissent lire le contenu sans exécuter JavaScript.
-2.Ajouter un titre et une meta description propres à chaque plat, directement dans le HTML généré, par exemple « Pizza Margherita | Nom du restaurant » pour le titre.
+1.L'application React génère une page HTML pour l'accueil et pour chaque plat au moment du build. Le contenu est visible sans JavaScript, puis React prend en charge la navigation.
+
+2.Chaque page possède un titre, une meta description et une URL canonique propres, présents dans le HTML et mis à jour lors de la navigation. Les URL sont lisibles et un plat inexistant renvoie un statut 404.
