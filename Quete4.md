@@ -1,5 +1,3 @@
-Les corrections sont appliquées dans quete4/produit.html et quete4/.htaccess.
-
 1.L'adresse de référence du produit est https://monsite.fr/produit/42. C'est son URL canonique.
 
 2.Le serveur redirige les versions HTTP et celles avec un / final vers cette adresse en HTTPS, avec un statut 301.

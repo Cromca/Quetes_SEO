@@ -1,5 +1,3 @@
-Les corrections sont appliquées dans quete3/index.html et quete3/produit.html.
-
 1.Le titre décrit les vélos électriques pliables.
 2.Une meta description présente le contenu de chaque page.
 3.Le h1 apparaît avant les h2 et les titres décrivent les sections.
